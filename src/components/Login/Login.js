@@ -4,6 +4,7 @@ import google from './kisspng-google-logo-googleplex-google-search-5b2cd7fd2d357
 import './Login.css'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import app from '../../firebase.init';
+import { Link } from 'react-router-dom';
 
 const auth = getAuth(app);
 
@@ -40,6 +41,9 @@ const Login = () => {
                 <input onBlur={passwordHandle} type="password" className='p-2 w-75 mb-2' name="password" id="" /><br />
                 <button className='w-25 py-2 me-3 border border-0 px-2 mb-5 rounded bg-primary text-white mt-3'>Login</button>
                 <button className='w-25 px-2 border border-0 mb-5 rounded'><img src={google} className="img-fluid" alt="" /></button>
+                <p>
+                    If you don't have an account? <Link to='/signup'>Create new</Link>
+                </p>
             </form>
         </div>
     );
