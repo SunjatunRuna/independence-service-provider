@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import Footer from '../Footer/Footer';
+import Login from '../Login/Login';
 import Service from '../Service/Service';
 import img from './image-137-scaled-e1604152201367.jpeg';
 
@@ -26,6 +28,7 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <Service></Service>
+            <Footer></Footer>
         </div>
     );
 };

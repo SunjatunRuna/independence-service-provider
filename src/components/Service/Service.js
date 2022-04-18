@@ -1,9 +1,28 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { CardGroup } from 'react-bootstrap';
+import Cart from '../Cart/Cart';
 
 const Service = () => {
+    const [foods, setFood] = useState([])
+    useEffect(() => {
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => setFood(data))
+    }, [])
     return (
-        <div className='mt-5'>
-            <h3>Service</h3>
+        <div className='my-5'>
+            <h3 className='my-5 pt-5'>Service</h3>
+            <CardGroup>
+                {
+                    foods.map(food => (
+                        <Cart
+                            key={food.id}
+                            food={food}
+                        ></Cart>
+                    ))
+                }
+            </CardGroup>
         </div>
     );
 };
