@@ -12,7 +12,7 @@ const Service = () => {
     }, [])
     return (
         <div className='my-5'>
-            <h3 className='my-5 pt-5'>Service</h3>
+            <h3 className='my-5 pt-5 fw-bold' style={{color: 'red'}}>Service</h3>
             <CardGroup>
                 {
                     foods.map(food => (

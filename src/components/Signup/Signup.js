@@ -1,15 +1,21 @@
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import app from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import avatar from './avatar-default-icon.png'
 import './Signup.css'
 
-const auth = getAuth(app);
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const[name, setName] = useState('');
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
+      const navigate = useNavigate();
     
     const nameHandle = event =>{
         setName(event.target.value);
@@ -21,16 +27,15 @@ const Signup = () => {
     const passwordHandle = event =>{
         setPassword(event.target.value);
     }
+    if(user){
+       navigate('/home')
+    }
     const submitButton = event =>{
         event.preventDefault()
-        createUserWithEmailAndPassword(auth, name, email, password)
-        .then(res => {
-            const user = res.user;
-            console.log(user);
-        })
-        .catch(error => {
-            console.error(error);
-        })
+        if(!name){
+            return;
+        }
+        createUserWithEmailAndPassword(email, password);
     }
     return (
         <div className='border border-0 shadow-lg mt-5 py-5 w-25 mx-auto rounded'>
@@ -42,6 +47,7 @@ const Signup = () => {
                 <input onBlur={nameHandle} type="text" placeholder='username' className='p-2 w-75  mb-4' required/><br />
                 <input onBlur={emailHandle} type="email" placeholder='enter email' className='p-2 w-75  mb-4' required/> <br />
                 <input onBlur={passwordHandle} type="password" placeholder='password' className='p-2 w-75 mb-4' name="password" id="" required/><br />
+                <p>{error?.message}</p>
                 <p>
                     Already have an account? <Link to='/login'>Log in</Link>
                 </p>

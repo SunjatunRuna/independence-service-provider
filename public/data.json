@@ -2,19 +2,22 @@
     {
         "food": "Home Made Cheese Pizza",
         "id": 1,
-        "price": 350,
+        "price": 950,
+        "description" : "Buy two get 10% discount",
         "img": "https://static.toiimg.com/thumb/53110049.cms?width=1200&height=900"
     },
     {
         "food": "Smash Burger",
         "id": 2,
-        "price": "180",
+        "price": "380",
+        "description" : "Buy two get french fry free",
         "img": "https://www.thecookierookie.com/wp-content/uploads/2020/01/featured-smash-burgers-recipe.jpg"
     },
     {
         "food": "Chocolate Cream Layer Cake",
         "id": 3,
-        "price": 650,
+        "price": 850,
+        "description" : "Buy two get 15% discount",
         "img": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1542062283%2Fchocolate-and-cream-layer-cake-1812-cover.jpg%3Fitok%3DR_xDiShk"
     }
 ]
