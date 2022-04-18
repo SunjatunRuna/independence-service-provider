@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import avatar from './avatar-default-icon.png';
 import google from './kisspng-google-logo-googleplex-google-search-5b2cd7fd2d3570.5263877415296655331852.jpg'
 import './Login.css';
@@ -21,7 +21,9 @@ const Login = () => {
 
     const [signInWithGoogle, userTwo] = useSignInWithGoogle(auth);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const emailHandle = event =>{
         setEmail(event.target.value);
@@ -31,7 +33,7 @@ const Login = () => {
     }
 
     if(user){
-        navigate('/home');
+        navigate(from, {replace: true});
     }
     const submitButton = event =>{
         event.preventDefault()

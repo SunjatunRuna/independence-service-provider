@@ -6,6 +6,8 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
+import RequireAuth from './components/RequireAuth/RequireAuth';
+import Error from './components/Error/Error';
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
-        <Route path='/checkout' element={<Checkout />}></Route>
+        <Route path='/checkout' element={<RequireAuth><Checkout /></RequireAuth>}></Route>
+        <Route path ='*' element={<Error/>}></Route>
       </Routes>
 
     </div>

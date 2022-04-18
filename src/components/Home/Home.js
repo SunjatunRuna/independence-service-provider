@@ -22,8 +22,8 @@ const Home = () => {
                         style={{ height: '600px' }}
                     />
                     <Carousel.Caption className='mb-5 pb-5'>
-                        <h1>Healthy Kitchen, Fresh Food</h1>
-                        <p className='pb-5 mb-5'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h1 className='fw-bold'>Healthy Kitchen, Fresh Food</h1>
+                        <p className='pb-5 mb-5'>Welcome!! Delicious, Good food in low budget. Eat healthy and be healthy!! We always maintain hygiene</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
