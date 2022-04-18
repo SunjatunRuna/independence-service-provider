@@ -39,9 +39,9 @@ const Signup = () => {
             </div>
             <form onSubmit={submitButton} className='container'>
                 
-                <input onBlur={nameHandle} type="text" placeholder='username' className='p-2 w-75  mb-4' /><br />
-                <input onBlur={emailHandle} type="email" placeholder='enter email' className='p-2 w-75  mb-4' /> <br />
-                <input onBlur={passwordHandle} type="password" placeholder='password' className='p-2 w-75 mb-4' name="password" id="" /><br />
+                <input onBlur={nameHandle} type="text" placeholder='username' className='p-2 w-75  mb-4' required/><br />
+                <input onBlur={emailHandle} type="email" placeholder='enter email' className='p-2 w-75  mb-4' required/> <br />
+                <input onBlur={passwordHandle} type="password" placeholder='password' className='p-2 w-75 mb-4' name="password" id="" required/><br />
                 <p>
                     Already have an account? <Link to='/login'>Log in</Link>
                 </p>

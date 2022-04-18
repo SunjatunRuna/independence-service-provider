@@ -36,9 +36,9 @@ const Login = () => {
             </div>
             <form onSubmit={submitButton} className=''>
                 <p className='text-start ps-5'>Email:</p>
-                <input onBlur={emailHandle} type="email" className='p-2 w-75  mb-4' /> <br />
+                <input onBlur={emailHandle} type="email" className='p-2 w-75  mb-4' required/> <br />
                 <p className='text-start ps-5'>Password:</p>
-                <input onBlur={passwordHandle} type="password" className='p-2 w-75 mb-2' name="password" id="" /><br />
+                <input onBlur={passwordHandle} type="password" className='p-2 w-75 mb-2' name="password" id="" required/><br />
                 <button className='w-25 py-2 me-3 border border-0 px-2 mb-5 rounded bg-primary text-white mt-3'>Login</button>
                 <button className='w-25 px-2 border border-0 mb-5 rounded'><img src={google} className="img-fluid" alt="" /></button>
                 <p>
