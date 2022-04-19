@@ -36,7 +36,7 @@ const Login = () => {
     }
     let errorMessage;
     if (error) {
-        errorMessage = <p className='text-danger'>Email password didn't match</p>
+        errorMessage = <p className='text-danger'>Error: {error?.message}</p>
     }
     const submitButton = event => {
         event.preventDefault()
