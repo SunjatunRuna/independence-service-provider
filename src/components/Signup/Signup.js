@@ -8,31 +8,31 @@ import './Signup.css'
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const[name, setName] = useState('');
+    const [name, setName] = useState('');
     const [
         createUserWithEmailAndPassword,
         user,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-      const navigate = useNavigate();
-    
-    const nameHandle = event =>{
+    const navigate = useNavigate();
+
+    const nameHandle = event => {
         setName(event.target.value);
     }
 
-    const emailHandle = event =>{
+    const emailHandle = event => {
         setEmail(event.target.value);
     }
-    const passwordHandle = event =>{
+    const passwordHandle = event => {
         setPassword(event.target.value);
     }
-    if(user){
-       navigate('/home')
+    if (user) {
+        navigate('/home')
     }
-    const submitButton = event =>{
+    const submitButton = event => {
         event.preventDefault()
-        if(!name){
+        if (!name) {
             return;
         }
         createUserWithEmailAndPassword(email, password);
@@ -43,10 +43,10 @@ const Signup = () => {
                 <img src={avatar} className="img-fluid w-25" alt="" />
             </div>
             <form onSubmit={submitButton} className='container'>
-                
-                <input onBlur={nameHandle} type="text" placeholder='username' className='p-2 w-75  mb-4' required/><br />
-                <input onBlur={emailHandle} type="email" placeholder='enter email' className='p-2 w-75  mb-4' required/> <br />
-                <input onBlur={passwordHandle} type="password" placeholder='password' className='p-2 w-75 mb-4' name="password" id="" required/><br />
+
+                <input onBlur={nameHandle} type="text" placeholder='username' className='p-2 w-75  mb-4' required /><br />
+                <input onBlur={emailHandle} type="email" placeholder='enter email' className='p-2 w-75  mb-4' required /> <br />
+                <input onBlur={passwordHandle} type="password" placeholder='password' className='p-2 w-75 mb-4' name="password" id="" required /><br />
                 <p>{error?.message}</p>
                 <p>
                     Already have an account? <Link to='/login'>Log in</Link>

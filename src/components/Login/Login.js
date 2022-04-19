@@ -61,12 +61,12 @@ const Login = () => {
                         toast('Email has been sent');
                     }}
                     className='btn btn-link border border-0 text-danger'>Forget Password?</button>
-                    <ToastContainer />
+                <ToastContainer />
                 <p className='px-2'>
                     Do not have an account? <Link to='/signup'>Create new</Link>
                 </p>
             </form>
-            
+
         </div>
     );
 };
