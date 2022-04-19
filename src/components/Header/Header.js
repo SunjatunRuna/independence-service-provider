@@ -13,9 +13,9 @@ const Header = () => {
     }
     return (
         <div className='p-3 m-0 row'>
-            <div className='col-lg-3'><img src={logo} className='img-fluid' style={{width: '80px'}} alt="" />
+            <div className='col-lg-3 col-sm-12'><img src={logo} className='img-fluid' style={{width: '80px'}} alt="" />
             Deli<span style={{color: 'red'}}>C</span>iou<span style={{color: 'red'}}>S</span></div>
-            <div className='col-lg-9 text-end'>
+            <div className='col-lg-9 col-sm-12 text-end'>
                 <nav>
                     <Link to="/" className='menu'>Home</Link>
                     <Link to="/about" className='menu'>About</Link>
@@ -23,7 +23,7 @@ const Header = () => {
                     <Link to="/checkout" className='menu'>Checkout</Link>
                     {
                         user?
-                        <button onClick={singOutButton} className='border border-0 bg-white text-secondary'>Sign Out</button>
+                        <button onClick={singOutButton} className='border border-0 bg-white text-secondary'>Logout</button>
                         :
                         <Link to="/login" className='menu'>Login</Link>
                     }

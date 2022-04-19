@@ -13,6 +13,7 @@ const Home = () => {
     };
     return (
         <div>
+            {/* banner part */}
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 <Carousel.Item>
                     <img
