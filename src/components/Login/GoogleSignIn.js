@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import google from './kisspng-google-logo-googleplex-google-search-5b2cd7fd2d3570.5263877415296655331852.jpg';
 
 const GoogleSignIn = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
     if(user){
         navigate('/home')
@@ -14,7 +14,7 @@ const GoogleSignIn = () => {
         signInWithGoogle();
     }
     return (
-        <button onClick={googleHandleButton} className='w-25 px-2 border border-0 mb-5 rounded'><img src={google} className="img-fluid" alt="" /></button>
+        <button onClick={googleHandleButton} className='w-25 px-2 border border-0 mb-2 rounded'><img src={google} className="img-fluid" alt="" /></button>
     );
 };
 

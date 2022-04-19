@@ -13,7 +13,7 @@ const Signup = () => {
         createUserWithEmailAndPassword,
         user,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
       const navigate = useNavigate();
     
