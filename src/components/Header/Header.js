@@ -20,6 +20,7 @@ const Header = () => {
                     <Link to="/" className='menu'>Home</Link>
                     <Link to="/about" className='menu'>About</Link>
                     <Link to="/blogs" className='menu'>Blogs</Link>
+                    <Link to="/checkout" className='menu'>Checkout</Link>
                     {
                         user?
                         <button onClick={singOutButton} className='border border-0 bg-white text-secondary'>Sign Out</button>

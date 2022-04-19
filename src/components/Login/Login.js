@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import avatar from './avatar-default-icon.png';
-import google from './kisspng-google-logo-googleplex-google-search-5b2cd7fd2d3570.5263877415296655331852.jpg'
 import './Login.css';
 import {  GoogleAuthProvider } from "firebase/auth";
 import { Link } from 'react-router-dom';
-import {useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth';
+import {useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import GoogleSignIn from './GoogleSignIn';
 
 
 const Login = () => {
@@ -18,8 +18,6 @@ const Login = () => {
         signInWithEmailAndPassword,
         user, error
     ] = useSignInWithEmailAndPassword(auth);
-
-    const [signInWithGoogle, userTwo] = useSignInWithGoogle(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -39,12 +37,6 @@ const Login = () => {
         event.preventDefault()
         signInWithEmailAndPassword(email, password)
     }
-    if(userTwo){
-        navigate('/home')
-    }
-    const googleHandleButton = () =>{
-        signInWithGoogle(googleProvider)
-    }
     return (
         <div className='border border-0 shadow-lg mt-5 py-5 w-25 mx-auto rounded'>
             <div className="login-title mb-5 text-info">
@@ -57,7 +49,7 @@ const Login = () => {
                 <input onBlur={passwordHandle} type="password" className='p-2 w-75 mb-2' name="password" id="" required/><br />
                 <p style={{color: 'red'}}>{error?.message}</p>
                 <button className='w-25 py-2 me-3 border border-0 px-2 mb-5 rounded bg-primary text-white mt-3'>Login</button>
-                <button onClick={googleHandleButton} className='w-25 px-2 border border-0 mb-5 rounded'><img src={google} className="img-fluid" alt="" /></button>
+                <GoogleSignIn></GoogleSignIn>
                 <p>
                     If you don't have an account? <Link to='/signup'>Create new</Link>
                 </p>
